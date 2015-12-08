@@ -60,4 +60,5 @@ r = [0; r; R];
 
 figure();
 axis equal;
-surf(t,r,U); ylabel('radius r'); xlabel('time t');
+surf(t,r,U); ylabel('radius r'); xlabel('time t'); 
+title('Fluid velocity in cylinder');
