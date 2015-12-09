@@ -30,7 +30,7 @@ b = -nu*(2/(hx*hx) + 1./(r.*r)).*e;
 c =  nu*(1/hx + 1./r).*e/hx;
 A = spdiags([a b c],[-1 0 1],Nx,Nx);
 I = speye(Nx,Nx);
-
+jacobien = det(A)
 %
 % first step 
 %
