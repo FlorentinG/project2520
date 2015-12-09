@@ -20,7 +20,9 @@ U^{t+1} &= U^{t} + 0.5*h_{t}\Big(f(U^{t}) + f(U^{t+1})\Big)\\
 
 Therefore,
 $$\Big(Id -0.5*h_{t}*A\big)U^{t+1} = (Id + 0.5*h_{t}*A)U^{t}$$
-This is a linear system that can easily be solved for $U^{t+1}$.
+This is a linear system that can easily be solved for $U^{t+1}$.\newline
+
+\red{TODO: jacobien est minus donc c'est stiff, analyser la condition CFL pour voir si les pas choisis ont du sens etc}
 
 
 
