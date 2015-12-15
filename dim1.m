@@ -1,25 +1,24 @@
+function [U,lambda] = dim1(Nx, Nt)
 % Task 1 Project 
 % Florentin GOYENS and David WEICKER
 % Solves the problem with 1D approximation in space variables
 %
-clear all;
-close all;
 
+close all;
 % Parameters
 nu = 1e-6;
 omega = 1;
 % Space grid
-Nx = 12; 
+%Nx = 12; 
 R = 0.04;
 hx = R/(Nx+1);
 r = linspace(hx,R-hx,Nx)';
 % Time grid
-Nt = 100; 
+%Nt = 100; 
 Tend = 200;
 T0 = 0;
 ht = (Tend-T0)/(Nt-1);
 t = linspace(T0,Tend,Nt)';
-
 
 U = zeros(Nx,Nt);
 U(:,1) = omega*r;
@@ -30,7 +29,7 @@ b = -nu*(2/(hx*hx) + 1./(r.*r)).*e;
 c =  nu*(1/hx + 1./r).*e/hx;
 A = spdiags([a b c],[-1 0 1],Nx,Nx);
 I = speye(Nx,Nx);
-jacobien = det(A)
+lambda = eig(full(A));
 %
 % first step 
 %
