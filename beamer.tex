@@ -18,7 +18,7 @@
 \title[Project SF2520]{Project 8: Rotating Fluid in a cylinder}
 \author{David \textsc{Weicker} \& Florentin \textsc{Goyens} }
 \institute{KTH}
-\date{18th december 2015}
+\date{18th December 2015}
 \begin{document}
 
 \begin{frame}
@@ -30,7 +30,7 @@
 
 \begin{itemize}
 \item Rotating cylinder filled with water is stopped at $t=0$. Navier-Stokes equation in cylindrical coordinates 
-\item Only angular component of the velocity
+\item Velocity only has angular component $\textbf{u}(r,\phi,z,t)=u_{\phi}(r,z,t)\textbf{e}_{phi}$
 \item Symmetry of the domain $\rightarrow$ we consider a rectangular slice 
 \end{itemize}
 
@@ -60,7 +60,7 @@ $$u(z=0)= u(z=H) = 0$$
 \end{itemize}
 $$\dfrac{\dr u}{\dr t}= f(u)= \nu\Big(\frac{1}{r}\frac{\dr u}{\dr r} + \frac{\dr^2 u}{\dr r^2} - \frac{u}{r^2}\Big)$$
 \begin{itemize}
-\item Parabolic equation that requires implicit time-scheme\newline $\rightarrow$ \textsc{Crank-Nicholson}
+\item Parabolic equation %that requires implicit time-scheme\newline $\rightarrow$ \textsc{Crank-Nicholson}
 \end{itemize}
 \end{frame}
 
@@ -77,7 +77,7 @@ $$\dfrac{\dr u}{\dr t}= f(u)= \nu\Big(\frac{1}{r}\frac{\dr u}{\dr r} + \frac{\dr
 \item Discrete equation with 2nd order central finite difference
 \end{itemize}
 \begin{align*}
-f(U_i ) &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h_x}+\nu\dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h_{x}^{2}} -\frac{\nu}{r_{i}^2}U_{i}\\
+f(U_i ) &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h}+\nu\dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^{2}} -\frac{\nu}{r_{i}^2}U_{i}\\
 &= \frac{\nu}{h}\Big( \frac{1}{h} - \frac{1}{2r_i}\Big)U_{i-1} 
  -\nu\Big( \frac{2}{h^2} + \frac{1}{r_{i}^{2}}\Big)U_{i}
 + \frac{\nu}{h}\Big( \frac{1}{h} + \frac{1}{2r_i}\Big)U_{i+1}\\
@@ -85,9 +85,11 @@ f(U_i ) &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h_x}+\nu\dfrac{U_{i+1}-2U_{
 \end{frame}
 
 \begin{frame}{High cylinder approximation}
+
 \begin{itemize}
-\item $\rightarrow$ tridiagonal matrix $f(U) = AU+b^t$ with $b^t$ for boundary conditions
-\item $b^t =0$ for $t>0$ and $b^0  = [0 \cdots 0  ~*]^{T}$ accounts for non zero initial condition at $r=R$.
+\item Tridiagonal matrix $f(U) = AU+b(t)$ with $b^t$ for boundary conditions
+\item $b(t) =0$ for $t>0$ and $b(0)  = [0 \cdots 0  ~*]^{T}$ accounts for non zero initial condition at $r=R$.
+\item ODE system $\dfrac{dU}{dt}=AU + b(t)$ is stiff ($h=R/10 \Longrightarrow \lambda_{max} = -0.0091, \lambda_{min}=-0.2571$), requires implicit method \textsc{Crank-Nicholson}
 \end{itemize}
 \end{frame}
 
@@ -101,7 +103,7 @@ U^{t+1} &= U^{t} + 0.5*h_{t}\Big(f(U^{t}) + f(U^{t+1})\Big)\\
   &= U^{t} + 0.5*h_{t}\Big(A*U^{t}+b^t + A*U^{t+1} + b^{t+1}\Big)\\
 \end{align*}
 Therefore,
-$$\Big(Id -0.5*h_{t}*A\big)U^{t+1} = (Id + 0.5*h_{t}*A)U^{t}+b^t$$
+$$\Big(Id -0.5*h_{t}*A\big)U^{t+1} = (Id + 0.5*h_{t}*A)U^{t}+0.5*h_{t}*b^t$$
 \begin{itemize}
 \item Linear system that can easily be solved for $U^{t+1}$ with sparse solver in Matlab
 \end{itemize}
@@ -109,7 +111,7 @@ $$\Big(Id -0.5*h_{t}*A\big)U^{t+1} = (Id + 0.5*h_{t}*A)U^{t}+b^t$$
 
 \begin{frame}{High cylinder approximation}
 \begin{itemize}
-\item Solution animation in Matlab
+\item Solution in Matlab
 \end{itemize}
 \begin{figure}[!h]
 \centering
@@ -168,7 +170,7 @@ Straightforward generalization of 1D case for domain and equation
 
 \begin{figure}[!h]
 \centering
-\includegraphics[width = 0.9\textwidth]{./plot2D.eps}
+\includegraphics[width = 1.1\textwidth]{./plot2D.eps}
 \end{figure}
 
 \end{frame}
@@ -181,10 +183,15 @@ Straightforward generalization of 1D case for domain and equation
 
 \begin{figure}[!h]
 \centering
-%\includegraphics[width = 0.45\textwidth]{./compare.eps}
+\includegraphics[width = 1.0\textwidth]{./compare.eps}
 \end{figure}
 \end{frame}
 
+\begin{frame}
+\begin{center}
+Thank you for your attention
+\end{center}
+\end{frame}
 
 
 \end{document}
