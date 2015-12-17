@@ -1,5 +1,15 @@
 function [U,r,z,t] = nsCyl(Nr,Nt,tend)
-%NSCYL 
+%NSCYL Solves the problem in project 8 for height H = 0.08 m 
+%INPUT : - Nr is the number of spatial unknown ==> (Nr+1)*h = R 
+%        - Nt is the number of time steps
+%        - tend is the final time ==> deltaT*Nt = tend
+%OUTPUT : - U is a matrix containing the solution 
+%           U(:,:,i) is the solution for time = t(i)
+%         - r is a row vector containing the spatial discretization in r
+%         - z is a row vector containing the spatial discretization in z
+%         - t is a row vector containing the time discretization
+%
+%Goyens Florentin & Weicker David
 nu = 1e-6;
 omega = 1;
 R = 0.04;

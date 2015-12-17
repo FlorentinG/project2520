@@ -1,4 +1,7 @@
-%Makes a little animation in 1D
+%Makes a little animation for the speed in one spatial dimension (the
+%height of the cylinder is considered to be infinite)
+%
+%Goyens Florentin & Weicker David
 close all;
 clear all;
 

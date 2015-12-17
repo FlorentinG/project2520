@@ -1,4 +1,6 @@
-%Plot 2D graphs
+%Plot graphs of two spatial dimensions for different times
+%
+%Goyens Florentin & Weicker David
 close all;
 clear all;
 
