@@ -26,7 +26,7 @@ t = 0:deltaT:tend;
 
 %First iteration takes initial condition into account
 f = [zeros(1,Nx-1) nu*R*omega*(1/(h*h)+1/(2*h*h*Nx))]';
-U(2,2:Nx+1) = (eye(Nx)-0.5*deltaT*A)\((eye(Nx)+0.5*deltaT*A)*U(1,2:Nx+1)'+deltaT*f);
+U(2,2:Nx+1) = (eye(Nx)-0.5*deltaT*A)\((eye(Nx)+0.5*deltaT*A)*U(1,2:Nx+1)'+0.5*deltaT*f);
 
 %Following iterations
 for i=2:Nt
