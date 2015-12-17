@@ -21,7 +21,7 @@ figure;
 for i = 1:4
     subplot(2,2,i);
     titre = sprintf('Time = %f',tend*(Ntcomp(i)-1)/Nt);
-    plot(r,u(Ntcomp(i),:),r,U(Z,:,Ntcomp(i)));
+    plot(r,u(Ntcomp(i),:),r,U(Z,:,Ntcomp(i)));xlabel('r [m]');ylabel('Speed [m/s]');
     title(titre);legend(M);
     axis([0 0.04 0 0.04]);
 end
