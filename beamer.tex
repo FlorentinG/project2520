@@ -30,7 +30,7 @@
 
 \begin{itemize}
 \item Rotating cylinder filled with water is stopped at $t=0$. Navier-Stokes equation in cylindrical coordinates 
-\item Velocity only has angular component $\textbf{u}(r,\phi,z,t)=u_{\phi}(r,z,t)\textbf{e}_{phi}$
+\item Velocity only has angular component $\textbf{u}(r,\varphi,z,t)=u_{\varphi}(r,z,t)\textbf{e}_{\varphi}$
 \item Symmetry of the domain $\rightarrow$ we consider a rectangular slice 
 \end{itemize}
 
@@ -77,7 +77,7 @@ $$\dfrac{\dr u}{\dr t}= f(u)= \nu\Big(\frac{1}{r}\frac{\dr u}{\dr r} + \frac{\dr
 \item Discrete equation with 2nd order central finite difference
 \end{itemize}
 \begin{align*}
-f(U_i ) &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h}+\nu\dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^{2}} -\frac{\nu}{r_{i}^2}U_{i}\\
+\frac{dU_i}{dt} &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h}+\nu\dfrac{U_{i+1}-2U_{i}+U_{i-1}}{h^{2}} -\frac{\nu}{r_{i}^2}U_{i}\\
 &= \frac{\nu}{h}\Big( \frac{1}{h} - \frac{1}{2r_i}\Big)U_{i-1} 
  -\nu\Big( \frac{2}{h^2} + \frac{1}{r_{i}^{2}}\Big)U_{i}
 + \frac{\nu}{h}\Big( \frac{1}{h} + \frac{1}{2r_i}\Big)U_{i+1}\\
@@ -87,7 +87,7 @@ f(U_i ) &= \frac{\nu}{r_i}\dfrac{(U_{i+1}-U_{i-1})}{2h}+\nu\dfrac{U_{i+1}-2U_{i}
 \begin{frame}{High cylinder approximation}
 
 \begin{itemize}
-\item Tridiagonal matrix $f(U) = AU+b(t)$ with $b^t$ for boundary conditions
+\item Tridiagonal matrix $\dfrac{dU}{dt} = AU+b(t)$ with $b(t)$ for boundary conditions
 \item $b(t) =0$ for $t>0$ and $b(0)  = [0 \cdots 0  ~*]^{T}$ accounts for non zero initial condition at $r=R$.
 \item ODE system $\dfrac{dU}{dt}=AU + b(t)$ is stiff ($h=R/10 \Longrightarrow \lambda_{max} = -0.0091, \lambda_{min}=-0.2571$), requires implicit method \textsc{Crank-Nicholson}
 \end{itemize}
@@ -166,8 +166,31 @@ Straightforward generalization of 1D case for domain and equation
 \end{align*}
 \end{frame}
 
-\begin{frame}{2 dimensional problem: solution}
 
+\begin{frame}{2 dimensional problem}
+
+\begin{itemize}
+\item Renumbering: $k = i +Nr*(j-1)$ allows minimal band width given space of domain
+\end{itemize}
+
+$$\dfrac{dU_k}{dt}=\nu\begin{pmatrix}
+.. \frac{1}{h^2} .. &(\frac{1}{h^2}-\frac{1}{2hr_i})& (\frac{-4}{h^2} - \frac{1}{r_{i}^2})  & (\frac{1}{h^2}+\frac{1}{2hr_i})& .. \frac{1}{h^2} ..
+\end{pmatrix}
+\begin{pmatrix}
+\vdots \\
+U_{k-N_r}\\
+\vdots \\
+U_{k-1}\\
+U_{k}\\
+U_{k+1}\\
+\vdots \\
+U_{k+N_r}\\
+\vdots \\
+\end{pmatrix}$$
+
+\end{frame}
+
+\begin{frame}{2 dimensional problem: solution}
 \begin{figure}[!h]
 \centering
 \includegraphics[width = 1.1\textwidth]{./plot2D.eps}
