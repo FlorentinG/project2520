@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.17)  17 DEC 2015 20:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.11.17)  17 DEC 2015 21:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1331,17 +1331,30 @@ Package pdftex.def Info: ./cylindre.jpg used on input line 42.
 
 ] [4
 
-] <./MoL.jpg, id=147, 1177.39874pt x 543.02875pt>
-File: ./MoL.jpg Graphic file (type jpg)
+]
+Package epstopdf Info: Source file: <./axis.eps>
+(epstopdf)                    date: 2015-12-17 20:27:15
+(epstopdf)                    size: 8296 bytes
+(epstopdf)             Output file: <./axis-eps-converted-to.pdf>
+(epstopdf)                    date: 2015-12-17 20:27:43
+(epstopdf)                    size: 5469 bytes
+(epstopdf)             Command: <repstopdf --outfile=./axis-eps-converted-to.pd
+f ./axis.eps>
+(epstopdf)             \includegraphics on input line 85.
+Package epstopdf Info: Output file is already uptodate.
 
-<use ./MoL.jpg>
-Package pdftex.def Info: ./MoL.jpg used on input line 85.
-(pdftex.def)             Requested size: 138.2795pt x 63.76859pt.
+<./axis-eps-converted-to.pdf, id=147, 562.1pt x 100.375pt>
+File: ./axis-eps-converted-to.pdf Graphic file (type pdf)
+
+<use ./axis-eps-converted-to.pdf>
+Package pdftex.def Info: ./axis-eps-converted-to.pdf used on input line 85.
+(pdftex.def)             Requested size: 276.559pt x 49.38481pt.
  [5
 
- <./MoL.jpg>] [6
+ <./axis-eps-converted-to.pdf>] [6
 
-] [7
+]
+[7
 
 ]
 Package epstopdf Info: Source file: <./dim1.eps>
@@ -1354,8 +1367,7 @@ Package epstopdf Info: Source file: <./dim1.eps>
 f ./dim1.eps>
 (epstopdf)             \includegraphics on input line 120.
 Package epstopdf Info: Output file is already uptodate.
-
-<./dim1-eps-converted-to.pdf, id=229, 421.575pt x 316.18124pt>
+ <./dim1-eps-converted-to.pdf, id=235, 421.575pt x 316.18124pt>
 File: ./dim1-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./dim1-eps-converted-to.pdf>
@@ -1386,7 +1398,7 @@ Overfull \hbox (0.25272pt too wide) detected at line 133
 
 ] [11
 
-] <./grid.jpg, id=343, 421.575pt x 287.0725pt>
+] <./grid.jpg, id=349, 421.575pt x 287.0725pt>
 File: ./grid.jpg Graphic file (type jpg)
  <use ./grid.jpg>
 Package pdftex.def Info: ./grid.jpg used on input line 167.
@@ -1406,7 +1418,7 @@ pdf ./plot2D.eps>
 (epstopdf)             \includegraphics on input line 176.
 Package epstopdf Info: Output file is already uptodate.
 
-<./plot2D-eps-converted-to.pdf, id=371, 982.67125pt x 518.93875pt>
+<./plot2D-eps-converted-to.pdf, id=377, 982.67125pt x 518.93875pt>
 File: ./plot2D-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./plot2D-eps-converted-to.pdf>
@@ -1431,7 +1443,7 @@ Package epstopdf Info: Source file: <./compare.eps>
 (epstopdf)             \includegraphics on input line 188.
 Package epstopdf Info: Output file is already uptodate.
 
-<./compare-eps-converted-to.pdf, id=409, 982.67125pt x 518.93875pt>
+<./compare-eps-converted-to.pdf, id=415, 982.67125pt x 518.93875pt>
 File: ./compare-eps-converted-to.pdf Graphic file (type pdf)
 
 <use ./compare-eps-converted-to.pdf>
@@ -1464,7 +1476,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 197.
  ) 
 Here is how much of TeX's memory you used:
  17760 strings out of 493304
- 319696 string characters out of 6139870
+ 319769 string characters out of 6139870
  406650 words of memory out of 5000000
  20722 multiletter control sequences out of 15000+600000
  46077 words of font info for 48 fonts, out of 8000000 for 9000
@@ -1483,10 +1495,10 @@ are/texmf/fonts/type1/public/lm/lmssbx10.pfb></usr/share/texmf/fonts/type1/publ
 ic/lm/lmsso10.pfb></usr/share/texmf/fonts/type1/public/lm/lmsso8.pfb></usr/shar
 e/texmf/fonts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/l
 m/lmsy8.pfb>
-Output written on beamer.pdf (15 pages, 386186 bytes).
+Output written on beamer.pdf (15 pages, 350029 bytes).
 PDF statistics:
- 526 PDF objects out of 1000 (max. 8388607)
- 463 compressed objects within 5 object streams
+ 532 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
  31 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
