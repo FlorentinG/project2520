@@ -21,7 +21,7 @@ e = (1:Nx)';
 a = 1-1./(2*(e+1));
 b = -2-1./(e.*e);
 c = 1+1./(2*(e-1));
-A = alpha*spdiags([a b c],-1:1,Nx,Nx);J = full(A);t = eig(J);display(max(t));display(min(t));
+A = alpha*spdiags([a b c],-1:1,Nx,Nx);
 
 U = zeros(Nt+1,Nx+2);
 r = 0:h:R;
