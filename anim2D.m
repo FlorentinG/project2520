@@ -1,4 +1,7 @@
-%Makes a little animation for the 2D problem
+%Makes a little animation for the speed in two spatial dimension (we no
+%long consider that the height of the cylinder is infinite)
+%
+%Goyens Florentin & Weicker David
 close all;
 clear all;
 

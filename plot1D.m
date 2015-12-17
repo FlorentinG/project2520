@@ -1,4 +1,6 @@
-%Plot 1D graphs
+%Plot graphs of the solution in one spatial dimension
+%
+%Goyens Florentin & Weicker David
 close all;
 clear all;
 

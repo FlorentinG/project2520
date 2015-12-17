@@ -1,5 +1,9 @@
 function [] = animComp(height)
-%ANIMCOMP 
+%ANIMCOMP Makes an animation to compare the solution at differents heights 
+%with the solution obtained for an infinite height
+%INPUT : height is a vector containing the heights we want to compare
+%
+%Goyens Florentin & Weicker David
 close all;
 
 Nr = 9;

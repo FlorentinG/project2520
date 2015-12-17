@@ -4,6 +4,12 @@ function [U,r,t] = highCyl(Nx,Nt,tend)
 %INPUT : - Nx is the number of spatial unknown ==> (Nx+1)*h = R 
 %        - Nt is the number of time steps
 %        - tend is the final time ==> deltaT*Nt = tend
+%OUTPUT : - U is a matrix containing the solution 
+%           U(:,i) is the solution for time = t(i)
+%         - r is a row vector containing the spatial discretization
+%         - t is a row vector containing the time discretization
+%
+%Goyens Florentin & Weicker David
 
 nu = 1e-6;
 omega = 1;
