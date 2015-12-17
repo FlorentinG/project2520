@@ -25,7 +25,7 @@ U(:,1) = omega*r;
 
 e = ones(Nx,1);
 a =  nu*(1/hx - 1./r).*e/hx;
-b = -nu*(2/(hx*hx) + 1./(r.*r)).*e;
+b = -nu*(2/(hx*hx) + 1./(r.*r)).*e;display(b);
 c =  nu*(1/hx + 1./r).*e/hx;
 A = spdiags([a b c],[-1 0 1],Nx,Nx);
 I = speye(Nx,Nx);
